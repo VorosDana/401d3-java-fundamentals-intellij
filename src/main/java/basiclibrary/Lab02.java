@@ -18,6 +18,10 @@ public class Lab02 {
     }
 
     public static boolean containsDuplicates(int[] input){
+        if(input.length == 0){
+            return false;
+        }
+
         // Makes a copy of the array, then sorts it
         // If two values are identical, they will be consecutive
         int[] sortedInput = Arrays.copyOf(input, input.length);
