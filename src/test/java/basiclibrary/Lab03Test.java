@@ -2,6 +2,11 @@ package basiclibrary;
 
 import org.junit.Test;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class Lab03Test {
@@ -20,5 +25,27 @@ public class Lab03Test {
                             "Never saw 68\n" +
                             "Never saw 69"
         ));
+    }
+
+    @Test
+    public void testVoting() {
+        List<String> votes = new ArrayList<>();
+        votes.add("Fred");
+        votes.add("Daphne");
+        votes.add("Shaggy");
+        votes.add("Velma");
+        votes.add("Velma");
+        votes.add("Shaggy");
+        votes.add("Shaggy");
+        votes.add("Scooby");
+        votes.add("Velma");
+        votes.add("Velma");
+
+        assertTrue("Velma".equals(Lab03.tally(votes)));
+    }
+
+    @Test
+    public void testLinter() {
+        System.out.println(Lab03.linter(Paths.get("./assets/gates.sh")));
     }
 }
