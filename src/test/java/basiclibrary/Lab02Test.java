@@ -58,7 +58,7 @@ public class Lab02Test {
 
     @Test
     public void TestArrayOfArraysNegativeAverage(){
-        assertArrayEquals(new int[] {10, 20, -300}, Lab02.arrayOfArrays(new int[][] {{2, 3, 4}, {10, 20, -300}, {8, 9}}));
+        assertArrayEquals(new int[] {2, 3, 4}, Lab02.arrayOfArrays(new int[][] {{2, 3, 4}, {10, 20, -300}, {8, 9}}));
     }
 
     // Make sure it handles an empty array in the input

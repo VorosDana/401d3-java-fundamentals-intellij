@@ -14,7 +14,6 @@ Make a function that takes in a string and a number, adds an 's' to that string 
 - [x] 1
 - [x] 2
 
-
 ### Coin Flips
 
 #### Task
@@ -82,3 +81,39 @@ Make a function that takes in a two dimensional array of ints, and returns the a
 - [x] Several arrays of ints, returns proper array
 - [x] Include an empty array in input, returns empty array if its average of 0 is the smallest
 - [x] Empty input, returns empty array
+
+## Lab03 ( [Code](./src/main/java/basiclibrary/Lab03.java) ) ( [Tests](./src/test/java/basiclibrary/Lab03Test.java))
+
+### Analyze Weather Data
+
+#### Task
+
+Take a two dimensional array of integers, record all values found in a HashSet, then return the high, low, and every value between those that was not found
+
+#### Tests
+
+- [x] Hand-validated data set
+
+### Vote Tallies
+
+#### Task
+
+Take in a List of Strings and tally which String shows up the most with a HashMap. Return that string.
+
+#### Tests
+
+- [x] Hand-validated data set.
+
+### Linter
+
+#### Task
+
+Take in a file path, return a String set of all missing semicolons.
+
+#### Tests
+
+- [x] File with no errors ( [Link](./assets/noErrors.js) )
+- [x] File with one error ( [Link](./assets/oneError.js) )
+- [x] File with few errors ( [Link](./assets/fewErrors.js) )
+- [x] File with MANY errors ( [Link](./assets/gates.sh) )
+- [x] Empty file ( [Link](./assets/empty.js) )
