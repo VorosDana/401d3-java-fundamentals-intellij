@@ -89,10 +89,6 @@ public class MyLinkedListTest {
         assertFalse(testList.contains(2346));
     }
 
-    @Test
-    public void print() {
-    }
-
     public String printArrayList(ArrayList input) {
         String output = "";
 

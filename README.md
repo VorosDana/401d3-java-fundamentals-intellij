@@ -117,3 +117,20 @@ Take in a file path, return a String set of all missing semicolons.
 - [x] File with few errors ( [Link](./assets/fewErrors.js) )
 - [x] File with MANY errors ( [Link](./assets/gates.sh) )
 - [x] Empty file ( [Link](./assets/empty.js) )
+
+## Lab 05 ( [Code](./src/main/java/mylinkedlist/MyLinkedList.java) ) ( [Tests](./src/test/java/mylinkedlist/MyLinkedListTest.java))
+
+### Linked List implementation
+
+#### Task
+
+Create a singly linked list that instantiates empty, can insert new values, can return a boolean result of whether a value is contained, and return a collection of all elements.
+
+#### Tests
+
+ - [x] Create and print an empty linked list
+ - [x] Create a linked list, insert 2 elements, return collection of those elements
+ - [x] Create a linked list, insert 5 elements, return collection of those elements
+ - [x] Create a linked list, return true when searching for a value contained in it
+ - [x] Create a linked list, return false when searching for a vlue NOT contained in it
+ - [x] Create a linked list, add elements, confirm head references last created element
