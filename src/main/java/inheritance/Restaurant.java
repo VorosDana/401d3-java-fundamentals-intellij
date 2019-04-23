@@ -1,14 +1,15 @@
 package inheritance;
 
-public class Restaurant {
+public class Restaurant extends ReviewSiteComponent {
     private String name;
     private int stars;
     private int price;
 
     public Restaurant(String name, int stars, int price) {
-        this.name = name;
-        // Stars from 0 to 5
-        this.stars = Math.min(5, Math.max(0, stars));
+        super(name, stars);
+//        this.name = name;
+//        // Stars from 0 to 5
+//        this.stars = Math.min(5, Math.max(0, stars));
         // Price category from 0 to 5
         this.price = Math.min(5, Math.max(0, price));
     }
