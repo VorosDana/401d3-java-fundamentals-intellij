@@ -8,7 +8,7 @@ public class RestaurantTest {
 
     @Test
     public void toString1() {
-        Restaurant petes = new Restaurant("Pete\'s", 3, 4);
+        Restaurant petes = new Restaurant("Pete\'s", 4);
         String actual = petes.toString();
 
         String expected = "Pete's ★★★☆☆ $$$$_";
