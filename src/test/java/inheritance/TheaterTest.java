@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 public class TheaterTest {
 
+    // Make sure movies are added properly
     @Test
     public void addMovie() {
         Theater testTheater = new Theater("MOVIES HERE");
@@ -24,8 +25,16 @@ public class TheaterTest {
         actual = testTheater.getMovies().size();
 
         assertEquals(expected, actual);
+
+        testTheater.addMovie("Rainbow Puppies 2: Now With Indigo");
+
+        expected = 3;
+        actual = testTheater.getMovies().size();
+
+        assertEquals(expected, actual);
     }
 
+    // Make sure movies can be removed as intended
     @Test
     public void removeMovie() {
         Theater testTheater = new Theater("MOVIES HERE");
@@ -49,8 +58,11 @@ public class TheaterTest {
         actual = testTheater.getMovies().size();
 
         assertEquals(expected, actual);
+
+        assertFalse(testTheater.isShowing("Rainbow Puppies"));
     }
 
+    // Test that check for a movie showing is working
     @Test
     public void isShowing() {
         Theater testTheater = new Theater("MOVIES HERE");
@@ -58,11 +70,13 @@ public class TheaterTest {
         testTheater.addMovie("Puppy Eating Kibble");
         testTheater.addMovie("Rainbow Puppies");
 
-        boolean actual = testTheater.isShowing("Puppy Eating Kibble");
 
-        assertTrue(actual);
+        assertTrue(testTheater.isShowing("Puppy Eating Kibble"));
+        assertTrue(testTheater.isShowing("Rainbow Puppies"));
+        assertFalse(testTheater.isShowing("Murder Puppies"));
     }
 
+    //
     @Test
     public void getReviews() {
         Theater testTheater = new Theater("MOVIES HERE");
@@ -79,6 +93,7 @@ public class TheaterTest {
         actual = testTheater.getReviews().size();
 
         assertEquals(expected, actual);
+        assertEquals(4, actual = testTheater.getReviews().get(1).getStars());
     }
 
     @Test
@@ -100,39 +115,21 @@ public class TheaterTest {
         String actual = testTheater.toString();
 
         assertEquals(expected, actual);
-    }
 
-    @Test
-    public void testReviewsToString() {
-        Theater testTheater = new Theater("MOVIES HERE");
-
-        testTheater.addReview("Yuvax", 3, "POPCORN OK");
-        testTheater.addReview("ZAXOR", 4, "SAD MOVIE GOOD", "Puppy Eating Kibble");
-
-        testTheater.addMovie("Puppy Eating Kibble");
-        testTheater.addMovie("Rainbow Puppies");
-
-        List reviews = testTheater.getReviews();
-
-//        String expectedFirst =
-
-        String expectedFirst = "Yuvax's review of MOVIES HERE\n" +
+        String reviewOneExpected = "Yuvax's review of MOVIES HERE\n" +
                 "★★★☆☆\n" +
                 "POPCORN OK";
-
-        String actualFirst = reviews.get(0).toString();
-
-        assertEquals(expectedFirst, actualFirst);
-
-        String expectedSecond = "ZAXOR's review of Puppy Eating Kibble at MOVIES HERE\n" +
+        String reviewTwoExpected = "ZAXOR's review of Puppy Eating Kibble at MOVIES HERE\n" +
                 "★★★★☆\n" +
-                "SAD MOVIE GOOD\n" +
-                "BUILD SUCCESSFUL in 0s";
+                "SAD MOVIE GOOD";
 
-        String actualSecond = reviews.get(1).toString();
+        String reviewOneActual = testTheater.getReviews().get(0).toString();
+        String reviewTwoActual = testTheater.getReviews().get(1).toString();
 
-        assertEquals(actualSecond, actualSecond);
+        assertEquals(reviewOneExpected, reviewOneActual);
+        assertEquals(reviewTwoExpected, reviewTwoActual);
     }
+
 
     @Test
     public void getStars() {
@@ -144,15 +141,24 @@ public class TheaterTest {
         int actual = testTheater.getStars();
 
         assertEquals(expected, actual);
+
+        testTheater.addReview("ZAXOR", 5, "SAD MOVIE GOOD", "Puppy Eating Kibble");
+
+        assertEquals(4, testTheater.getStars());
+
+        testTheater.addReview("DAK", 1, "BAD");
+
+        assertEquals(3, testTheater.getStars());
     }
 
     @Test
     public void getName() {
         Theater testTheater = new Theater("MOVIES HERE");
+        Theater testTwoter = new Theater("MOVIES THERE");
+        Theater testThreeter = new Theater("MOVIES EVERYWHERE");
 
-        String expected = "MOVIES HERE";
-        String actual = testTheater.getName();
-
-        assertEquals(expected, actual);
+        assertEquals("MOVIES HERE", testTheater.getName());
+        assertEquals("MOVIES THERE", testTwoter.getName());
+        assertEquals("MOVIES EVERYWHERE", testThreeter.getName());
     }
 }
