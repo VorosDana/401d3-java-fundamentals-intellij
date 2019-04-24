@@ -3,12 +3,13 @@ package inheritance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant extends ReviewSiteComponent {
+public class Restaurant implements Rateable {
     private int price;
     private List<Review> reviews = new ArrayList<>();
+    private String name;
 
     public Restaurant(String name, int price) {
-        super(name);
+        this.name = name;
         // Price category from 0 to 5
         this.price = Math.min(5, Math.max(0, price));
     }

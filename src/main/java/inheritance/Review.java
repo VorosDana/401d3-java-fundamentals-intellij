@@ -1,12 +1,13 @@
 package inheritance;
 
-public class Review extends ReviewSiteComponent {
+public class Review {
     private String reviewBody;
     private Restaurant reviewTarget;
     private int stars;
+    private String authorName;
 
     public Review(String authorName, int reviewStars, Restaurant reviewTarget, String reviewBody) {
-        super(authorName);
+        this.authorName = authorName;
         this.reviewBody = reviewBody;
         this.reviewTarget = reviewTarget;
         this.stars = Math.min(5, Math.max(0, reviewStars));
@@ -16,10 +17,21 @@ public class Review extends ReviewSiteComponent {
         return stars;
     }
 
+    public String getReviewBody() {
+        return reviewBody;
+    }
+
+    public String getReviewer() {
+        return authorName;
+    }
+
+    public Restaurant getReviewTarget() {
+        return reviewTarget;
+    }
 
     @Override
     public String toString() {
-        String output = name + "'s review of " + reviewTarget.getName() + "\n";
+        String output = authorName + "'s review of " + reviewTarget.getName() + "\n";
         for (int i = 0; i < stars; i++) {
             output += "★";
         }
