@@ -2,11 +2,11 @@ package inheritance;
 
 public class Review {
     private String reviewBody;
-    private Restaurant reviewTarget;
+    private Rateable reviewTarget;
     private int stars;
     private String authorName;
 
-    public Review(String authorName, int reviewStars, Restaurant reviewTarget, String reviewBody) {
+    public Review(String authorName, int reviewStars, Rateable reviewTarget, String reviewBody) {
         this.authorName = authorName;
         this.reviewBody = reviewBody;
         this.reviewTarget = reviewTarget;
@@ -25,7 +25,7 @@ public class Review {
         return authorName;
     }
 
-    public Restaurant getReviewTarget() {
+    public Rateable getReviewTarget() {
         return reviewTarget;
     }
 

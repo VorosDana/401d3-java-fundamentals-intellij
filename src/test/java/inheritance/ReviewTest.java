@@ -55,7 +55,7 @@ public class ReviewTest {
 
         testRest.addReview("Jill", 4, "PROTEIN");
 
-        Restaurant actual = testRest.getReviews().get(0).getReviewTarget();
+        Rateable actual = testRest.getReviews().get(0).getReviewTarget();
 
         assertSame(testRest, actual);
     }

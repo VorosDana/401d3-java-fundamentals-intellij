@@ -7,8 +7,6 @@ public interface Rateable {
 
     public List<Review> getReviews();
 
-    public int getPriceCategory();
-
     public int getStars();
 
     public String getName();
