@@ -49,4 +49,27 @@ public class Shop implements Rateable {
     public String getName() {
         return name;
     }
+
+    public String toString() {
+        String output = "";
+        output += name + " ";
+
+        for (int i = 0; i < getStars(); i++) {
+            output += "★";
+        }
+        for (int i = getStars(); i < 5; i++) {
+            output += "☆";
+        }
+
+        output += " ";
+
+        for (int i = 0; i < priceCategory; i++) {
+            output += "$";
+        }
+        for (int i = priceCategory; i < 5; i++) {
+            output += "_";
+        }
+
+        return output;
+    }
 }

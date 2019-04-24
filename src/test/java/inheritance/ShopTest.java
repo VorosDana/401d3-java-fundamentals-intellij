@@ -39,4 +39,17 @@ public class ShopTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testToString() {
+        Shop testShop = new Shop("Pile of Stuff", "It's a big pile of stuff, come get some", 1);
+
+        testShop.addReview("Blorp", 3, "Disorganized");
+
+        String expected = "Pile of Stuff ★★★☆☆ $____";
+
+        String actual = testShop.toString();
+
+        assertEquals(expected, actual);
+    }
 }
