@@ -22,4 +22,41 @@ public class ReviewTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void confirmBodyText() {
+        Restaurant testRest = new Restaurant("Golgor's Meats", 4);
+
+        testRest.addReview("Jill", 4, "PROTEIN");
+
+        String expected = "PROTEIN";
+
+        String actual = testRest.getReviews().get(0).getReviewBody();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void confirmReviewer() {
+        Restaurant testRest = new Restaurant("Golgor's Meats", 4);
+
+        testRest.addReview("Jill", 4, "PROTEIN");
+
+        String expected = "Jill";
+
+        String actual = testRest.getReviews().get(0).getReviewer();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void confirmReviewTarget() {
+        Restaurant testRest = new Restaurant("Golgor's Meats", 4);
+
+        testRest.addReview("Jill", 4, "PROTEIN");
+
+        Restaurant actual = testRest.getReviews().get(0).getReviewTarget();
+
+        assertSame(testRest, actual);
+    }
 }
