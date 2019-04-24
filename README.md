@@ -121,10 +121,38 @@ Take in a file path, return a String set of all missing semicolons.
  
  ## Lab 06 
  
+ ### Restuarants and Reviews
+ 
  #### Task
  
  Create a class for Restaurants and Reviews. Have Restaurants be able to hold Reviews. Reviews have an Author, a star rating, and a review text body. Restaurants have names, Reviews, and stars, with the stars reflecting Reviews.
  
- #### Tests
+ #### Code - Restaurant ( [Link](./src/main/java/inheritance/Restaurant.java))
  
- -[x] 
+ #### Code - Review ( [Link](./src/main/java/inheritance/Review.java))
+ 
+ #### Tests - Restaurant ( [Link](./src/test/java/inheritance/RestaurantTest.java))
+ 
+ #### Tests -  ( [Link](./src/test/java/inheritance/ReviewTest.java))
+ 
+ ## Lab 07
+ 
+ ### Shops
+ 
+ #### Task
+ 
+ Create a class for Shops. Shops have a name, price category, and description. Shops can also be reviewed just like Restaurants.
+ 
+ #### Code ( [Link](./src/main/java/inheritance/Shop.java))
+ 
+ #### Tests ( [Link](./src/test/java/inheritance/RestaurantTest.java))
+ 
+ ### Theaters
+ 
+ #### Task
+ 
+ Create a class for Theaters. Theaters have a name and all currently showing movies. Movies can be added or removed. Theaters can be rated like Restaurants and Shops, but can also accept reviews that include the movie seen.
+ 
+ #### Code ( [Link](./src/main/java/inheritance/Theater.java))
+ 
+ #### Tests ( [Link](./src/test/java/inheritance/TheaterTest.java))
